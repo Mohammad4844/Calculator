@@ -65,7 +65,11 @@ button {
 button:active {
     background-color: #9B0DEA;
     transform: translateY(4px);
-  }
+}
+
+button:hover {
+    background-color: #9B0DEA;
+}
 
 .clear, .delete {
     width: 144px;

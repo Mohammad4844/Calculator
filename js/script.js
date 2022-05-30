@@ -29,8 +29,8 @@ operatorButtons.forEach(button => button.addEventListener("click", () => {
     displayValue = "";
 }));
 
-let buttons = document.querySelectorAll(".number");
-buttons.forEach(button => button.addEventListener("click", () => {
+let numbers = document.querySelectorAll(".number");
+numbers.forEach(button => button.addEventListener("click", () => {
     if (displayValue.length <= 10) // Max 10 digits on screen
     outputToDisplay(displayValue += button.textContent);
 }));
@@ -53,6 +53,13 @@ let decimal = document.querySelector(".decimal");
 decimal.addEventListener("click", () => {
     if (!displayValue.includes(".")) // Prevents multiple decimal points from being added
         outputToDisplay(displayValue += "."); 
+});
+
+let buttons = document.querySelectorAll("button");
+document.addEventListener("keydown", (e) => {
+    buttons.forEach((button) => {
+        if (e.key === button.textContent) button.click();
+    });
 });
 
 const add = (x, y) => x + y;
