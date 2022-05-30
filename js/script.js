@@ -6,13 +6,16 @@ let currentOperator = "";
 let operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach(button => button.addEventListener("click", () => {
     let operator = button.textContent;
-    // When someone clicks an operator before entering a number
-    if (displayValue === "" && currentOperator === "" && value1 === null) throw "Enter a number before selecting an operator";
+    // When someone clicks an operator before entering any number
+    if (displayValue === "" && currentOperator === "" && value1 === null) {
+        alert("Enter a number first!");
+        return;
+    }
     if (currentOperator === "" || currentOperator === "=") {
         if (value1 === null) 
             value1 = Number.parseFloat(displayValue); 
      } 
-     else if (displayValue !== "") { // Default case
+    else if (displayValue !== "") { // Default case
         value2 = Number.parseFloat(displayValue);
         try {
             let ans = operate(value1, value2, currentOperator);
@@ -22,8 +25,8 @@ operatorButtons.forEach(button => button.addEventListener("click", () => {
             clearButton.click();
         }
      }
-     currentOperator = operator;
-     displayValue = "";
+    currentOperator = operator;
+    displayValue = "";
 }));
 
 let buttons = document.querySelectorAll(".number");
@@ -41,6 +44,12 @@ deleteButton.addEventListener("click", () => {
     if (displayValue === "") return;
     displayValue = displayValue.substring(0, displayValue.length - 1);
     outputToDisplay(displayValue);
+});
+
+let decimal = document.querySelector(".decimal");
+decimal.addEventListener("click", () => {
+    if (!displayValue.includes(".")) // Prevents multiple decimal points from being added
+        outputToDisplay(displayValue += "."); 
 });
 
 const add = (x, y) => x + y;
