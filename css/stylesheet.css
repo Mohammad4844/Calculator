@@ -1,0 +1,103 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: #050808;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height:100vh;
+    margin: 0px;
+}
+
+h1 {
+    color:#4120A9;
+    font-size: 32px;
+    font-family: "Trebuchet MS", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex: 1 1 0;
+    justify-content: center;
+}
+
+.display {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 22px;
+    min-height: 50px;
+    width: 272px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #4120A9;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+button {
+    border: 1px solid black;
+    width: 70px;
+    height: 70px;
+    margin: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    border-radius: 6px;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #9B0DEA;
+    transform: translateY(4px);
+  }
+
+.clear, .delete {
+    width: 144px;
+    background-color: #170B3B;
+}
+
+.number, .decimal {
+    background-color: #2d1580;
+}
+
+.operator {
+    background-color: #170B3B;
+}
+
+.footer {
+    background-color: #0d0a16;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0px;
+    
+}
+
+#gh-logo {
+    width: 25px;
+    margin-left:10px ;
+}
+
+p, img {
+    display: flex;
+    align-items: center;
+    color: #7b53ff;
+}

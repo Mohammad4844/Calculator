@@ -30,7 +30,10 @@ operatorButtons.forEach(button => button.addEventListener("click", () => {
 }));
 
 let buttons = document.querySelectorAll(".number");
-buttons.forEach(button => button.addEventListener("click", () => outputToDisplay(displayValue += button.textContent)));
+buttons.forEach(button => button.addEventListener("click", () => {
+    if (displayValue.length <= 10) // Max 10 digits on screen
+    outputToDisplay(displayValue += button.textContent);
+}));
 
 let clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", () => {
